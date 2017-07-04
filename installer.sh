@@ -4,6 +4,11 @@ echo "Installing Brew"
 echo "Installing GIT"
 brew install git
 
+echo "Adding Ignore alias"
+git config --global alias.ignore 'update-index --skip-worktree'
+git config --global alias.unignore 'update-index --no-skip-worktree'
+git config --global alias.ignored '!git ls-files -v | grep "^S"'
+
 echo "Installing Iterm"
 curl -o iterm.zip https://iterm2.com/downloads/stable/iTerm2-3_0_15.zip
 unzip iterm.zip
